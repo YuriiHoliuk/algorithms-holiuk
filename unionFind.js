@@ -3,6 +3,7 @@
 class UnionFind {
     constructor() {
         this._elements = [];
+        this._count = 0;
     }
 
     connect(a, b) {
@@ -11,9 +12,15 @@ class UnionFind {
             return;
         }
 
-        this._elements[a] = isNaN(this._elements[a]) ? a : this._elements[a];
-        this._elements[b] = isNaN(this._elements[b]) ? b : this._elements[b];
+        if (isNaN(this._elements[a])) {
+            this._elements[a] = a;
+            this._count += 1;
+        }
 
+        if (isNaN(this._elements[b])) {
+            this._elements[b] = b;
+            this._count += 1;
+        }
 
         let componenetA = this._elements[a];
         let componenetB = this._elements[b];
@@ -34,7 +41,18 @@ class UnionFind {
         } else {
             return this._elements[a] === this._elements[b];
         }
+    }
 
+    count() {
+        return this._count;
+    }
+
+    component(a) {
+        if (isNaN(this._elements[a])) {
+            return false;
+        } else  {
+            return this._elements[a];
+        }
     }
 }
 
