@@ -50,24 +50,24 @@ describe.only('#unionFind', function() {
         count.should.be.eql(0);
     });
 
-    it('should #count return 2 if we connet 2 elements', function() {
+    it('should #count return 1 if we connet 2 elements to 1 component', function() {
         let uf = new algolib.UnionFind();
 
         uf.connect(9, 19);
+
+        let count = uf.count();
+        count.should.be.eql(1);
+    });
+
+    it('should #count return 2 if we conneted 2 times and create 2 components', function() {
+        let uf = new algolib.UnionFind();
+
+        uf.connect(9, 19);
+        uf.connect(8, 1);
+
 
         let count = uf.count();
         count.should.be.eql(2);
-    });
-
-    it('should #count return 3 if we conneted 2 times, 3 elements total', function() {
-        let uf = new algolib.UnionFind();
-
-        uf.connect(9, 19);
-        uf.connect(9, 1);
-
-
-        let count = uf.count();
-        count.should.be.eql(3);
     });
 
     it('should #component return "false" if element are not in any component ', function() {

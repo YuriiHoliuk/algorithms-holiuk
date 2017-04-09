@@ -44,7 +44,13 @@ class UnionFind {
     }
 
     count() {
-        return this._count;
+        let uniq = [];
+        for (let i = 0; i < this._elements.length; i++) {
+            if (this._elements[i] !== undefined && !~uniq.indexOf(this._elements[i])) {
+                uniq.push(this._elements[i]);
+            }
+        }
+        return uniq.length;
     }
 
     component(a) {
