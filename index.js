@@ -6,6 +6,7 @@ let divideWatermelon = require('./divideWatermelon');
 let countStones = require('./countStones');
 let shouldSayHello = require('./shouldSayHello');
 let getNextBeautifulYear = require('./getNextBeautifulYear');
+let UnionFind = require('./unionFind');
 
 let algolib = {
     bubbleSort,
@@ -13,7 +14,8 @@ let algolib = {
     divideWatermelon,
     countStones,
     shouldSayHello,
-    getNextBeautifulYear
+    getNextBeautifulYear,
+    UnionFind
 }
 
 module.exports = algolib;
