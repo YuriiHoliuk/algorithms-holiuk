@@ -7,6 +7,7 @@ let countStones = require('./countStones');
 let shouldSayHello = require('./shouldSayHello');
 let getNextBeautifulYear = require('./getNextBeautifulYear');
 let UnionFind = require('./unionFind');
+let QuickUnion = require('./quickUnion');
 
 let algolib = {
     bubbleSort,
@@ -15,7 +16,8 @@ let algolib = {
     countStones,
     shouldSayHello,
     getNextBeautifulYear,
-    UnionFind
+    UnionFind,
+    QuickUnion
 }
 
 module.exports = algolib;
