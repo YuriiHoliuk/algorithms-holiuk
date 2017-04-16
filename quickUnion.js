@@ -55,23 +55,23 @@ class QuickUnion {
         return e === this._elements[e] ? e : this._findRoot(this._elements[e]);
     }
 
-    // count() {
-    //     let uniq = [];
-    //     for (let i = 0; i < this._elements.length; i++) {
-    //         if (this._elements[i] !== undefined && !~uniq.indexOf(this._elements[i])) {
-    //             uniq.push(this._elements[i]);
-    //         }
-    //     }
-    //     return uniq.length;
-    // }
-    //
-    // component(a) {
-    //     if (isNaN(this._elements[a])) {
-    //         return false;
-    //     } else  {
-    //         return this._elements[a];
-    //     }
-    // }
+    count() {
+        let count = 0;
+        for (let i = 0; i < this._elements.length; i++) {
+            if (this._elements[i] === i) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    component(a) {
+        if (isNaN(this._elements[a])) {
+            return false;
+        } else  {
+            return this._findRoot(a);
+        }
+    }
 }
 
 module.exports = QuickUnion;

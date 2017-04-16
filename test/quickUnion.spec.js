@@ -9,8 +9,8 @@ describe.only('#QuickUnion', function() {
 
         qu.connect.should.be.instanceOf(Function);
         qu.isConnected.should.be.instanceOf(Function);
-        // qu.count.should.be.instanceOf(Function);
-        // qu.component.should.be.instanceOf(Function);
+        qu.count.should.be.instanceOf(Function);
+        qu.component.should.be.instanceOf(Function);
     });
 
 
@@ -104,60 +104,60 @@ describe.only('#QuickUnion', function() {
     });
 
 
-    // it('should #count return 0 if no used elements', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //
-    //     let count = qu.count();
-    //     count.should.be.eql(0);
-    // });
-    //
-    // it('should #count return 1 if we connet 2 elements to 1 component', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //     qu.connect(9, 19);
-    //
-    //     let count = qu.count();
-    //     count.should.be.eql(1);
-    // });
-    //
-    // it('should #count return 2 if we conneted 2 times and create 2 components', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //     qu.connect(9, 19);
-    //     qu.connect(8, 1);
-    //
-    //
-    //     let count = qu.count();
-    //     count.should.be.eql(2);
-    // });
-    //
-    // it('should #component return "false" if element are not in any component ', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //     let component = qu.component(5);
-    //     component.should.be.false();
-    // });
-    //
-    // it('should #component(1) return "5" if element connected to 5', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //     qu.connect(1, 5);
-    //
-    //     let component = qu.component(1);
-    //     component.should.be.eql(5);
-    // });
-    //
-    // it('should #component(1) return "10" after chain: 1 > 2 > 4 > 7 > 10 (revers)', function() {
-    //     let qu = new algolib.QuickUnion();
-    //
-    //     qu.connect(7, 10);
-    //     qu.connect(4, 7);
-    //     qu.connect(2, 4);
-    //     qu.connect(1, 2);
-    //
-    //     let component = qu.component(1);
-    //     component.should.be.eql(10);
-    // });
+    it('should #count return 0 if no used elements', function() {
+        let qu = new algolib.QuickUnion();
+
+
+        let count = qu.count();
+        count.should.be.eql(0);
+    });
+
+    it('should #count return 1 if we connet 2 elements to 1 component', function() {
+        let qu = new algolib.QuickUnion();
+
+        qu.connect(9, 19);
+
+        let count = qu.count();
+        count.should.be.eql(1);
+    });
+
+    it('should #count return 2 if we conneted 2 times and create 2 components', function() {
+        let qu = new algolib.QuickUnion();
+
+        qu.connect(9, 19);
+        qu.connect(8, 1);
+
+
+        let count = qu.count();
+        count.should.be.eql(2);
+    });
+
+    it('should #component return "false" if element are not in any component ', function() {
+        let qu = new algolib.QuickUnion();
+
+        let component = qu.component(5);
+        component.should.be.false();
+    });
+
+    it('should #component(1) return "5" if element connected to 5', function() {
+        let qu = new algolib.QuickUnion();
+
+        qu.connect(1, 5);
+
+        let component = qu.component(1);
+        component.should.be.eql(5);
+    });
+
+    it('should #component(1) return "10" after chain: 1 > 2 > 4 > 7 > 10 (revers)', function() {
+        let qu = new algolib.QuickUnion();
+
+        qu.connect(7, 10);
+        qu.connect(4, 7);
+        qu.connect(2, 4);
+        qu.connect(1, 2);
+
+        let component = qu.component(1);
+        component.should.be.eql(10);
+    });
 
 });
