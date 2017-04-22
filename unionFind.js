@@ -3,7 +3,7 @@
 class UnionFind {
     constructor() {
         this._elements = [];
-        this._count = 0;
+        this._weights = [];
     }
 
     connect(a, b) {
@@ -14,12 +14,12 @@ class UnionFind {
 
         if (isNaN(this._elements[a])) {
             this._elements[a] = a;
-            this._count += 1;
+            this._weights[a] = 1;
         }
 
         if (isNaN(this._elements[b])) {
             this._elements[b] = b;
-            this._count += 1;
+            this._weights[b] = 1;
         }
 
         let componenetA = this._elements[a];
