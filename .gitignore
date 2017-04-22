@@ -124,7 +124,7 @@ dist/
 # cache files for sublime text
 *.tmlanguage.cache
 *.tmPreferences.cache
-*.stTheme.cache
+*.stTheme.cache 
 
 # workspace files are user-specific
 *.sublime-workspace
@@ -140,6 +140,5 @@ sftp-config.json
 ### Code ###
 # Visual Studio Code - https://code.visualstudio.com/
 .settings/
-
 
 .idea
