@@ -34,6 +34,25 @@ class LinkedList {
         }
     }
 
+    get(index) {
+        if (!this._head) {
+            return;
+        }
+
+        let i = 0;
+        let currentNode = this._head;
+
+        while (currentNode._next !== 0 && i < index) {
+            console.log(i);
+            if (i === index) {
+                return currentNode._data;
+            } else {
+                currentNode = currentNode._next;
+                i++;
+            }
+        }
+    }
+
 }
 
 module.exports = LinkedList;

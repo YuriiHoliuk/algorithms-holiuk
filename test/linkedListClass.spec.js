@@ -43,4 +43,17 @@ describe.only('#LinkedList', function() {
 
         linkedList._tail._data.should.be.eql('third');
     });
+
+    it('#get should return undefined if no element with this index', function() {
+        let linkedList = new algolib.LinkedList();
+
+        (linkedList.get(0) === undefined).should.be.true();
+
+        linkedList.push('2');
+
+        console.dir(linkedList.get(0));
+
+        (linkedList.get(0) === undefined).should.be.true();
+
+    });
 });
