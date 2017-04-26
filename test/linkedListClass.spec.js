@@ -56,7 +56,6 @@ describe.only('#LinkedList', function() {
 
         (linkedList.get(4) === undefined).should.be.true();
         (linkedList.get(50) === undefined).should.be.true();
-
     });
 
     it('#get should return element with this index', function() {
@@ -94,6 +93,79 @@ describe.only('#LinkedList', function() {
         linkedList.pop().should.be.eql('2');
         linkedList.pop().should.be.eql('1');
         linkedList.pop().should.be.eql('0');
+    });
 
+    it('#unshift should add element to list head', function() {
+        let linkedList = new algolib.LinkedList();
+
+        linkedList.unshift('0');
+
+        linkedList.pop().should.be.eql('0');
+
+        linkedList.unshift('0');
+        linkedList.unshift('1');
+        linkedList.unshift('2');
+        linkedList.unshift('3');
+
+        linkedList.get(2).should.be.eql('1');
+        linkedList.pop().should.be.eql('0');
+        linkedList.pop().should.be.eql('1');
+        linkedList.pop().should.be.eql('2');
+        linkedList.pop().should.be.eql('3');
+    });
+
+    it('#shift should return undefined if empty list', function() {
+        let linkedList = new algolib.LinkedList();
+
+        (linkedList.shift() === undefined).should.be.true();
+    });
+
+    it('#shift should return first element in list', function() {
+        let linkedList = new algolib.LinkedList();
+
+        linkedList.unshift('0');
+
+        linkedList.shift().should.be.eql('0');
+
+        linkedList.push('0');
+        linkedList.push('1');
+        linkedList.push('2');
+        linkedList.unshift('-1');
+
+        linkedList.shift().should.be.eql('-1');
+        linkedList.shift().should.be.eql('0');
+        linkedList.shift().should.be.eql('1');
+        linkedList.shift().should.be.eql('2');
+    });
+
+    it('#insertAfter should return undefined if no element with this index', function() {
+        let linkedList = new algolib.LinkedList();
+
+        (linkedList.insertAfter('', 0) === undefined).should.be.true();
+
+        linkedList.push('0');
+        linkedList.push('1');
+        linkedList.push('2');
+
+        (linkedList.insertAfter('', 3) === undefined).should.be.true();
+        (linkedList.insertAfter('', 20) === undefined).should.be.true();
+    });
+
+    it('#insertAfter should insert element into list', function() {
+        let linkedList = new algolib.LinkedList();
+
+        linkedList.push('0');
+        linkedList.push('2');
+        linkedList.push('3');
+
+        linkedList.insertAfter('1', 0);
+
+        linkedList.get(1).should.be.eql('1');
+
+        linkedList.insertAfter('4', 3);
+        linkedList.insertAfter('5', 4);
+
+        linkedList.get(4).should.be.eql('4');
+        linkedList.pop().should.be.eql('5');
     });
 });
