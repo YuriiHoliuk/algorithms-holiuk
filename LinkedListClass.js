@@ -9,29 +9,31 @@ class LinkedList {
         this._tail = null;
     }
 
-    // push(data) {
-    //     if (!this._head) {
-    //         this._head = new Node(data);
-    //         this._tail = this._head;
-    //     } else {
-    //         let currentNode = this._head;
-    //         while (currentNode._next !== null) {
-    //             currentNode = currentNode._next;
-    //         }
-
-    //         currentNode._next = new Node(data);
-    //         this._tail = currentNode._next;
-    //     }
-    // }
-
     push(data) {
         if (!this._head) {
             this._head = new Node(data);
             this._tail = this._head;
         } else {
-            this._tail._next = new Node(data);
+            this._tail._next = new Node(data, this._tail);
             this._tail = this._tail._next;
         }
+    }
+
+    pop() {
+        if (!this._head) {
+            return;
+        }
+        let last = this._tail._data;
+
+        if (!this._tail._prev) {
+            this._head = null;
+            this._tail = this._head;
+            return last;
+        }
+
+        this._tail._prev._next = null;
+        this._tail = this._tail._prev;
+        return last;
     }
 
     get(index) {
@@ -42,15 +44,13 @@ class LinkedList {
         let i = 0;
         let currentNode = this._head;
 
-        while (currentNode._next !== 0 && i < index) {
-            console.log(i);
-            if (i === index) {
-                return currentNode._data;
-            } else {
-                currentNode = currentNode._next;
-                i++;
+        for (let i = 0; i < index; i++) {
+            if (currentNode._next === null) {
+                return;
             }
+            currentNode = currentNode._next;
         }
+        return currentNode._data;
     }
 
 }
