@@ -88,6 +88,7 @@ class LinkedList {
         } else {
             this._tail = newNode;
         }
+        return true;
     }
 
     _getNodeByIndex(index) {
