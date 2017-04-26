@@ -49,11 +49,51 @@ describe.only('#LinkedList', function() {
 
         (linkedList.get(0) === undefined).should.be.true();
 
+        linkedList.push('0');
+        linkedList.push('1');
         linkedList.push('2');
+        linkedList.push('3');
 
-        console.dir(linkedList.get(0));
+        (linkedList.get(4) === undefined).should.be.true();
+        (linkedList.get(50) === undefined).should.be.true();
 
-        (linkedList.get(0) === undefined).should.be.true();
+    });
+
+    it('#get should return element with this index', function() {
+        let linkedList = new algolib.LinkedList();
+
+        linkedList.push('0');
+        linkedList.push('1');
+        linkedList.push('2');
+        linkedList.push('3');
+
+        linkedList.get(0).should.be.eql('0');
+        linkedList.get(3).should.be.eql('3');
+        linkedList.get(1).should.be.eql('1');
+    });
+
+    it('#pop should return undefined if empty list', function() {
+        let linkedList = new algolib.LinkedList();
+
+        (linkedList.pop() === undefined).should.be.true();
+    });
+
+    it('#pop should return last element in list', function() {
+        let linkedList = new algolib.LinkedList();
+
+        linkedList.push('0');
+
+        linkedList.pop().should.be.eql('0');
+
+        linkedList.push('0');
+        linkedList.push('1');
+        linkedList.push('2');
+        linkedList.push('3');
+
+        linkedList.pop().should.be.eql('3');
+        linkedList.pop().should.be.eql('2');
+        linkedList.pop().should.be.eql('1');
+        linkedList.pop().should.be.eql('0');
 
     });
 });
