@@ -18,6 +18,7 @@ describe.only('#LinkedList', function() {
             linkedList.shift.should.be.instanceof(Function);
             linkedList.get.should.be.instanceof(Function);
             linkedList.insertAfter.should.be.instanceof(Function);
+            linkedList.remove.should.be.instanceof(Function);
         });
     });
 
@@ -181,6 +182,62 @@ describe.only('#LinkedList', function() {
 
             linkedList.get(4).should.be.eql('4');
             linkedList.pop().should.be.eql('5');
+        });
+    });
+
+    describe('\n    #remove(index)', function() {
+
+        it('#remove(index) should return undefined if no element with this index', function() {
+            let linkedList = new LinkedList();
+
+            (linkedList.remove(0) === undefined).should.be.true();
+
+            linkedList.push('0');
+            linkedList.push('1');
+
+            (linkedList.remove(2) === undefined).should.be.true();
+        });
+
+        it('#remove(index) should remove element with index from list and return it', function() {
+            let linkedList = new LinkedList();
+
+            linkedList.push('0');
+            linkedList.push('1');
+            linkedList.push('2');
+            linkedList.push('3');
+            linkedList.push('4');
+
+            linkedList.remove(1).should.be.eql('1');
+            linkedList.remove(1).should.be.eql('2');
+            linkedList.remove(2).should.be.eql('4');
+        });
+
+        it('#remove(index) should return first element if index = 0', function() {
+            let linkedList = new LinkedList();
+
+            linkedList.push('0');
+            linkedList.push('1');
+            linkedList.push('2');
+            linkedList.push('3');
+            linkedList.push('4');
+
+            linkedList.remove(0).should.be.eql('0');
+            linkedList.remove(0).should.be.eql('1');
+            linkedList.remove(0).should.be.eql('2');
+        });
+
+        it('#remove(index) should return last element if index = list length - 1', function() {
+            let linkedList = new LinkedList();
+
+            linkedList.push('0');
+            linkedList.push('1');
+            linkedList.push('2');
+            linkedList.push('3');
+            linkedList.push('4');
+
+            linkedList.remove(4).should.be.eql('4');
+            linkedList.remove(3).should.be.eql('3');
+            linkedList.remove(2).should.be.eql('2');
         });
     });
 });
