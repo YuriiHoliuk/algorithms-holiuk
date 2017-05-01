@@ -3,7 +3,7 @@
 const algolib = require('../index');
 const LinkedList = algolib.LinkedList;
 
-describe.only('#LinkedList', function() {
+describe('#LinkedList', function() {
 
     describe('\n    #Data structure', function() {
 
