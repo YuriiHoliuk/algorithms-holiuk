@@ -14,6 +14,16 @@ class LinkedList {
         return this._length;
     }
 
+    static createList(arr) {
+        let list = new LinkedList();
+
+        arr.forEach(function(value) {
+            list.push(value);
+        }, this);
+
+        return list;
+    }
+
     push(data) {
         if (!this._head) {
             this._head = new Node(data);
@@ -137,8 +147,14 @@ class LinkedList {
 
     getArray() {
         let arr = [];
+        let currentNode = this._head;
 
+        for (let i = 0; i < this.length; i++) {
+            arr.push(currentNode._data);
+            currentNode = currentNode._next;
+        }
 
+        return arr;
     }
 
     _getNodeByIndex(index) {

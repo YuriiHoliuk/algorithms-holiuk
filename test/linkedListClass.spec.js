@@ -20,6 +20,7 @@ describe.only('#LinkedList', function() {
             linkedList.insertAfter.should.be.instanceof(Function);
             linkedList.remove.should.be.instanceof(Function);
             linkedList.getArray.should.be.instanceof(Function);
+            LinkedList.createList.should.be.instanceof(Function);
         });
     });
 
@@ -291,6 +292,52 @@ describe.only('#LinkedList', function() {
 
             linkedList.pop();
             linkedList.length.should.be.eql(0);
+        });
+    });
+
+    describe('\n    #getArray()', function() {
+
+        it('#getArray() should return empty Array if list is empty', function() {
+            let linkedList = new LinkedList();
+
+            const arr = linkedList.getArray();
+
+            arr.should.be.instanceof(Array);
+            arr.should.be.eql([]);
+        });
+
+        it('#getArray() should return array of elements of the list', function() {
+            let linkedList = new LinkedList();
+
+            linkedList.push('0');
+
+            let arr = linkedList.getArray()
+            arr.should.be.deepEqual(['0']);
+
+            linkedList.push('1');
+            linkedList.push('2');
+            linkedList.push('3');
+
+            arr = linkedList.getArray();
+            arr.should.be.deepEqual(['0', '1', '2', '3']);
+        });
+    });
+
+    describe('\n    #createList(array)', function() {
+
+        it('#creteList(array) should return LinkedList', function() {
+            let linkedList = LinkedList.createList([]);
+
+            linkedList.should.be.instanceof(LinkedList);
+        });
+
+        it('#creteList(array) should return LinkedList of elements of this array', function() {
+            let linkedList = LinkedList.createList(['10', { deep: 90 }, 12, [1, '12']]);
+
+            linkedList.pop().should.be.deepEqual([1, '12']);
+            linkedList.pop().should.be.deepEqual(12);
+            linkedList.pop().should.be.deepEqual({ deep: 90 });
+            linkedList.pop().should.be.deepEqual('10');
         });
     });
 });
