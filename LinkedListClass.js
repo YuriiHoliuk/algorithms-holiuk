@@ -91,6 +91,30 @@ class LinkedList {
         return true;
     }
 
+    remove(index) {
+        let currentNode = this._getNodeByIndex(index);
+
+        if (currentNode === undefined) {
+            return;
+        }
+
+        if (currentNode._next === null) {
+            return this.pop(index);
+        }
+
+        if (currentNode._prev === null) {
+            return this.shift();
+        }
+
+        let prevNode = currentNode._prev,
+            nextNode = currentNode._next;
+
+        prevNode._next = nextNode;
+        nextNode._prev = prevNode;
+
+        return currentNode._data;
+    }
+
     _getNodeByIndex(index) {
         if (!this._head) {
             return;
