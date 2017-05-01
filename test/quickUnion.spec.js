@@ -2,7 +2,7 @@
 
 const algolib = require('../index');
 
-describe.only('#QuickUnion', function() {
+describe('#QuickUnion', function() {
 
     it('should create proper data structure', function() {
         let qu = new algolib.QuickUnion();

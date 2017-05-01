@@ -8,6 +8,8 @@ let shouldSayHello = require('./shouldSayHello');
 let getNextBeautifulYear = require('./getNextBeautifulYear');
 let UnionFind = require('./unionFind');
 let QuickUnion = require('./quickUnion');
+let LinkedList = require('./LinkedListClass');
+let Node = require('./NodeClass');
 
 let algolib = {
     bubbleSort,
@@ -17,7 +19,9 @@ let algolib = {
     shouldSayHello,
     getNextBeautifulYear,
     UnionFind,
-    QuickUnion
+    QuickUnion,
+    LinkedList,
+    Node
 }
 
 module.exports = algolib;
