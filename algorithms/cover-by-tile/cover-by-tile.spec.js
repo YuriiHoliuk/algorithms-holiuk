@@ -1,6 +1,6 @@
 'use strict';
 
-const algolib = require('../index.js');
+const algolib = require('../../index.js');
 
 describe('#coverByTile', function() {
 

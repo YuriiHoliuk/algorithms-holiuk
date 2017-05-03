@@ -1,6 +1,6 @@
 'use strict';
 
-var algolib = require('../index');
+var algolib = require('../../index');
 
 describe('#countStones', function() {
 
