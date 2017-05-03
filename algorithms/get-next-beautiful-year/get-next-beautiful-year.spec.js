@@ -1,6 +1,6 @@
 'use strict';
 
-const algolib = require('../index');
+const algolib = require('../../index');
 
 describe('#getNextBeautifulYear', function() {
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const algolib = require('../index');
+const algolib = require('../../index');
 const LinkedList = algolib.LinkedList;
 
 describe('#LinkedList', function() {

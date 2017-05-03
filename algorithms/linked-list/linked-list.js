@@ -1,6 +1,6 @@
 'use strict';
 
-var Node = require('./NodeClass');
+var Node = require('./node');
 
 class LinkedList {
 

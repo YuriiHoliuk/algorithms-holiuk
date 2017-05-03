@@ -4,8 +4,8 @@
     "description": "algorithms implementation",
     "main": "index.js",
     "scripts": {
-        "test": "node ./node_modules/mocha/bin/mocha --require should --recursive ./test",
-        "autotest": "node ./node_modules/mocha/bin/mocha --require should --watch --recursive ./test"
+        "test": "node ./node_modules/mocha/bin/mocha --require should --recursive ./algorithms",
+        "autotest": "node ./node_modules/mocha/bin/mocha --require should --watch --recursive ./algorithms"
     },
     "repository": {
         "type": "git",
