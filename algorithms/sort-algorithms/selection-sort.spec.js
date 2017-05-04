@@ -7,7 +7,7 @@ const shuffle = require('./shuffle-array');
 const isSorted = require('./is-sorted');
 
 let testArray = [];
-for (let i = 0; i < 20000; i++) {
+for (let i = 0; i < 100; i++) {
     testArray.push(i);
 }
 
