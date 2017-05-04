@@ -3,13 +3,20 @@
 function selectionSort(array, compare) {
     let length = array.length;
 
-    for (let j = 0; j < length - 1; j++) {
-        for (let i = j + 1; i < length; i++) {
-            if (compare(array[j], array[i])) {
-                let temp = array[j];
-                array[j] = array[i];
-                array[i] = array[j];
+    for (let i = 0; i < length - 1; i++) {
+        let minIndex = i;
+
+        for (let j = i + 1; j < length; j++) {
+
+            if(compare(array[minIndex], array[j])) {
+                minIndex = j;
             }
+        }
+
+        if (minIndex !== i) {
+            let temp = array[i];
+            array[i] = array[minIndex];
+            array[minIndex] = temp;
         }
     }
 
