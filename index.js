@@ -9,8 +9,9 @@ let getNextBeautifulYear = require('./algorithms/get-next-beautiful-year/get-nex
 let UnionFind = require('./algorithms/union-find/union-find');
 let QuickUnion = require('./algorithms/union-find/quick-union');
 let LinkedList = require('./algorithms/linked-list/linked-list');
-let selectionSort = require('./algorithms/sort-algorithms/selection-sort');
 let Node = require('./algorithms/linked-list/node');
+let selectionSort = require('./algorithms/sort-algorithms/selection-sort');
+let shellSort = require('./algorithms/sort-algorithms/shell-sort');
 
 let algolib = {
     bubbleSort,
@@ -23,7 +24,8 @@ let algolib = {
     QuickUnion,
     LinkedList,
     Node,
-    selectionSort
+    selectionSort,
+    shellSort
 };
 
 module.exports = algolib;

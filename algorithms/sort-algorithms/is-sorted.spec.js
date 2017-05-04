@@ -1,7 +1,7 @@
 const isSorted = require('./is-sorted');
 const compare = require('./compare-functions').compareNumbers;
 
-describe.only('#isSorted(array, compare)', function () {
+describe('#isSorted(array, compare)', function () {
 
     it('should be a function', function () {
         isSorted.should.be.instanceOf(Function);

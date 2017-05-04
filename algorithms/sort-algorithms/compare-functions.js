@@ -1,5 +1,5 @@
 function compareNumbers(a, b) {
-    return a - b < 0;
+    return a - b > 0;
 }
 
 const compares = {
