@@ -18,6 +18,10 @@ class QuickUnion {
             this._weights[b] = 1;
         }
 
+        let tmp = this.isConnected(a, b, true);
+        // let isConnected = tmp[0];
+        // let rootA = tmp[1];
+        // let rootB = tmp[2];
         let [isConnected, rootA, rootB] = this.isConnected(a, b, true);
 
         if (isConnected) {

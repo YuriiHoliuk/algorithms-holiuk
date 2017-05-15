@@ -1,17 +1,17 @@
 'use strict';
 
 const algolib = require('../../index');
-const sort = algolib.selectionSort;
+const sort = algolib.mergeSort;
 const compare = require('./compare-functions').compareNumbers;
 const shuffle = require('./shuffle-array');
 const isSorted = require('./is-sorted');
 
 let testArray = [];
-for (let i = 0; i < 20000; i++) {
+for (let i = 0; i < 40000; i++) {
     testArray.push(i);
 }
 
-describe('#selectionSort(array, compare)', function() {
+describe('#shellSort(array, compare)', function() {
 
     it('should be a function', function () {
         sort.should.be.instanceOf(Function);

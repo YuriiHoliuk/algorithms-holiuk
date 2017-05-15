@@ -1,3 +1,5 @@
+'use strict';
+
 const shuffle = require('./shuffle-array');
 
 describe('#shuffleArray(array)', function () {

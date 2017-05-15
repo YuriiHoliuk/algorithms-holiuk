@@ -10,11 +10,11 @@ function shellSort(array, compare) {
     const gaps = generatePratt(length);
 
     gaps.forEach(gap => {
-       for (let i = 0; i + gap < length; i++) {
-           let j = i + gap;
+        for (let i = 0; i + gap < length; i++) {
+            let j = i + gap;
 
-           recursiveCompare(i, j, gap);
-       }
+            recursiveCompare(i, j, gap);
+        }
     });
 
     return array;

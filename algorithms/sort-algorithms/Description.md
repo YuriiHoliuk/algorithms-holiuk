@@ -1,6 +1,7 @@
 # Implemented sort algorithms and helper functions
 ## Sort algorithms
 - #### **Selection sort**
+- #### **Merge sort**
 - #### **Shell sort**
    Has helper function **`generatePratt(array.length):`** return array of intervals for shell sort
 
@@ -15,12 +16,11 @@ All sort algorithms have similar interface:
    + compareNumbersReverse
 
 ### Sort algorithms performance (20000 elements)
-- Selecttion sort: ~1400ms
-- Shell sort: ~180ms 
+- Selecttion sort: ~1400ms | ~1500ms
+- Shell sort: ~180ms | ~95ms
+- Merge sort: | ~160ms
 
 ### TODO
-- optimize Pratt generation
 - universal tests for different sorts
-- add Insertion, Merge, Quick sorts
-- add swap function
+- add Insertion, Quick sorts
 - add more compares and default compare

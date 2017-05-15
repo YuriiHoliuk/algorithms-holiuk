@@ -1,3 +1,5 @@
+'use strict';
+
 function isSorted(array, compare) {
     let sorted = true;
 

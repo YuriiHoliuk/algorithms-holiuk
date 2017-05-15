@@ -1,3 +1,5 @@
+'use strict';
+
 function shuffleArray(array) {
 
     let shuffledArray = [],

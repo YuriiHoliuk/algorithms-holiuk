@@ -12,6 +12,7 @@ let LinkedList = require('./algorithms/linked-list/linked-list');
 let Node = require('./algorithms/linked-list/node');
 let selectionSort = require('./algorithms/sort-algorithms/selection-sort');
 let shellSort = require('./algorithms/sort-algorithms/shell-sort');
+let mergeSort = require('./algorithms/sort-algorithms/merge-sort');
 
 let algolib = {
     bubbleSort,
@@ -25,7 +26,8 @@ let algolib = {
     LinkedList,
     Node,
     selectionSort,
-    shellSort
+    shellSort,
+    mergeSort
 };
 
 module.exports = algolib;
