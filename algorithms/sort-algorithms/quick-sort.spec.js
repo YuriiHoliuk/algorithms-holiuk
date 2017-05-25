@@ -1,7 +1,7 @@
 'use strict';
 
 const algolib = require('../../index');
-const sort = algolib.shellSort;
+const sort = algolib.quickSort;
 const compare = require('./compare-functions').compareNumbers;
 const shuffle = require('./shuffle-array');
 const isSorted = require('./is-sorted');
@@ -11,7 +11,8 @@ for (let i = 0; i < 50000; i++) {
     testArray.push(i);
 }
 
-describe('#shellSort(array, compare)', function() {
+describe.only('#quickSort(array, compare)', function() {
+    this.timeout(0);
 
     it('should be a function', function () {
         sort.should.be.instanceOf(Function);
@@ -36,7 +37,10 @@ describe('#shellSort(array, compare)', function() {
 
     it('should return sorted array', function () {
         testArray = shuffle(testArray);
+        // console.log(testArray);
+
         testArray = sort(testArray, compare);
+        // console.log(testArray);
 
         isSorted(testArray, compare).should.be.true();
     });

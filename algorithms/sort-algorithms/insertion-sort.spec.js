@@ -11,7 +11,7 @@ for (let i = 0; i < 20000; i++) {
     testArray.push(i);
 }
 
-describe('#shellSort(array, compare)', function() {
+describe('#insertionSort(array, compare)', function() {
 
     it('should be a function', function () {
         sort.should.be.instanceOf(Function);
