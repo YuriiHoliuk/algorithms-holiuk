@@ -11,7 +11,7 @@ for (let i = 0; i < 50000; i++) {
     testArray.push(i);
 }
 
-describe.only('#quickSort(array, compare)', function() {
+describe('#quickSort(array, compare)', function() {
     this.timeout(0);
 
     it('should be a function', function () {

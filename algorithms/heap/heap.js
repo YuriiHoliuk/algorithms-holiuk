@@ -2,9 +2,9 @@
 
 class Heap {
 
-    constructor(array, compare) {
-        this.heapCore = array ? this.heapify(array) : [];
+    constructor(compare, array) {
         this.compare = compare;
+        this.heapCore = array ? this.heapify(array) : [];
     }
 
     getMax() {
@@ -12,17 +12,21 @@ class Heap {
     }
 
     delMax() {
+        if (!this.heapCore.length) return false;
+
         let temp = this.heapCore[this.heapCore.length - 1];
         this.heapCore[this.heapCore.length - 1] = this.heapCore[0];
         this.heapCore[0] = temp;
 
-        this.heapCore.pop();
+        let maxEl = this.heapCore.pop();
         this._siftDown(0);
+
+        return maxEl;
     }
 
     add(value) {
         this.heapCore.push(value);
-        this._siftUp(this.heapCore[this.heapCore.length - 1]);
+        this._siftUp(this.heapCore.length - 1);
     }
 
     merge(heap) {
@@ -30,19 +34,28 @@ class Heap {
     }
 
     heapify(array) {
+        let length = array.length,
+            from = Math.floor(length / 2);
 
+        for (let i = from; i >= 0; i--) {
+            this._siftDown(i, array);
+        }
+
+        return array;
     }
 
-    _siftUp(index) {
+    _siftUp(index, array) {
+        array = array ? array : this.heapCore;
+
         while (index > 0) {
             let parent = this._getParent(index);
 
-            if (!parent) return;
+            if (!parent && parent !== 0) return;
 
-            if (this.compare(this.heapCore[index], this.heapCore[parent])) {
-                let temp = this.heapCore[index];
-                this.heapCore[index] = this.heapCore[parent];
-                this.heapCore[parent] = temp;
+            if (this.compare(array[parent], array[index])) {
+                let temp = array[index];
+                array[index] = array[parent];
+                array[parent] = temp;
 
                 index = parent;
             } else {
@@ -51,8 +64,10 @@ class Heap {
         }
     }
 
-    _siftDown(index) {
-        let length = this.heapCore.length;
+    _siftDown(index, array) {
+        array = array ? array : this.heapCore;
+
+        let length = array.length;
 
         while (index < length) {
 
@@ -60,30 +75,32 @@ class Heap {
                 secondChild = this._getSecond(index),
                 maxIndex = false;
 
-            if (firstChild > length - 1) return;
+            if (firstChild > length - 1) return false;
 
-            if (!this.compare(this.heapCore[firstChild], this.heapCore[index])) {
+            if (!this.compare(array[firstChild], array[index])) {
                 maxIndex = firstChild;
             }
 
-            if (!maxIndex) {
-                if (!this.compare(this.heapCore[secondChild], this.heapCore[index])) {
-                    maxIndex = secondChild;
-                }
-            } else {
-                if (!this.compare(this.heapCore[secondChild], this.heapCore[maxIndex])) {
-                    maxIndex = secondChild;
+            if (secondChild < length) {
+                if (!maxIndex && maxIndex !== 0) {
+                    if (!this.compare(array[secondChild], array[index])) {
+                        maxIndex = secondChild;
+                    }
+                } else {
+                    if (!this.compare(array[secondChild], array[maxIndex])) {
+                        maxIndex = secondChild;
+                    }
                 }
             }
 
             if (maxIndex) {
-                let temp = this.heapCore[index];
-                this.heapCore[index] = this.heapCore[maxIndex];
-                this.heapCore[maxIndex] = temp;
+                let temp = array[index];
+                array[index] = array[maxIndex];
+                array[maxIndex] = temp;
 
                 index = maxIndex;
             } else {
-                return;
+                return false;
             }
         }
     }
@@ -102,3 +119,5 @@ class Heap {
         return parent >= 0 ? parent : false;
     }
 }
+
+module.exports = Heap;

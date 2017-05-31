@@ -15,6 +15,7 @@ let shellSort = require('./algorithms/sort-algorithms/shell-sort');
 let mergeSort = require('./algorithms/sort-algorithms/merge-sort');
 let insertionSort = require('./algorithms/sort-algorithms/insertion-sort');
 let quickSort = require('./algorithms/sort-algorithms/quick-sort');
+let Heap = require('./algorithms/heap/heap');
 
 let algolib = {
     bubbleSort,
@@ -31,7 +32,8 @@ let algolib = {
     shellSort,
     mergeSort,
     insertionSort,
-    quickSort
+    quickSort,
+    Heap
 };
 
 module.exports = algolib;
