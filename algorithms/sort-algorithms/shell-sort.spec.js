@@ -7,11 +7,12 @@ const shuffle = require('./shuffle-array');
 const isSorted = require('./is-sorted');
 
 let testArray = [];
-for (let i = 0; i < 50000; i++) {
+for (let i = 0; i < 20000; i++) {
     testArray.push(i);
 }
 
 describe('#shellSort(array, compare)', function() {
+    this.timeout(0);
 
     it('should be a function', function () {
         sort.should.be.instanceOf(Function);

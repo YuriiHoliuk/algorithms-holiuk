@@ -1,8 +1,9 @@
 let Heap = require('../../index').Heap;
 let compare = require('../sort-algorithms/compare-functions').compareNumbers;
+let compareRevers = require('../sort-algorithms/compare-functions').compareNumbersRevers;
 let shuffle = require('../sort-algorithms/shuffle-array');
 
-describe.only('#Heap', function () {
+describe('#Heap', function () {
     describe('#Data structure', function () {
         it('should create proper data structure', function () {
             let heap = new Heap(compare);
@@ -30,7 +31,7 @@ describe.only('#Heap', function () {
             heap.add(21);
             heap.heapCore.length.should.be.eql(3);
         });
-        
+
         it('should add elements in correct order', function () {
             let heap = new Heap(compare);
 
@@ -99,28 +100,28 @@ describe.only('#Heap', function () {
             heap.add(21);
             heap.add(9);
             heap.heapCore.length.should.be.eql(15);
-            
-            
+
+
             heap.delMax();
             heap.delMax();
             heap.delMax();
             heap.heapCore.length.should.be.eql(12);
-            
+
             heap.delMax();
             heap.delMax();
             heap.delMax();
             heap.delMax();
             heap.heapCore.length.should.be.eql(8);
-            
+
             heap.delMax();
             heap.delMax();
             heap.delMax();
             heap.delMax();
             heap.heapCore.length.should.be.eql(4);
-            
+
             heap.delMax();
             heap.heapCore.length.should.be.eql(3);
-            
+
             heap.delMax();
             heap.delMax();
             heap.delMax();
@@ -196,7 +197,13 @@ describe.only('#Heap', function () {
                 current.should.be.aboveOrEqual(prev);
             }
         });
+    });
+
+    describe('#toArray', function () {
+        it('should return sorted array', function () {
+            let heap = new Heap(compareRevers, shuffle([0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]));
+
+            heap.toArray().should.be.deepEqual([0, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21]);
+        });
     })
 });
-
-// [0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]

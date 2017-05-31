@@ -44,6 +44,21 @@ class Heap {
         return array;
     }
 
+    toArray() {
+        let sortedArray = JSON.parse(JSON.stringify(this.heapCore)),
+            length = sortedArray.length;
+
+        for (let i = length - 1; i >= 0; i--) {
+            let temp = sortedArray[0];
+            sortedArray[0] = sortedArray[i];
+            sortedArray[i] = temp;
+
+            this._siftDown(0, sortedArray, i);
+        }
+
+        return sortedArray;
+    }
+
     _siftUp(index, array) {
         array = array ? array : this.heapCore;
 
@@ -64,10 +79,10 @@ class Heap {
         }
     }
 
-    _siftDown(index, array) {
+    _siftDown(index, array, to) {
         array = array ? array : this.heapCore;
 
-        let length = array.length;
+        let length = to !== undefined ? to : array.length;
 
         while (index < length) {
 

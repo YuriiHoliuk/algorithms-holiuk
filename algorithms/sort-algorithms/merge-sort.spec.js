@@ -11,7 +11,8 @@ for (let i = 0; i < 20000; i++) {
     testArray.push(i);
 }
 
-describe('#shellSort(array, compare)', function() {
+describe('#mergeSort(array, compare)', function() {
+    this.timeout(0);
 
     it('should be a function', function () {
         sort.should.be.instanceOf(Function);
