@@ -1,5 +1,9 @@
 'use strict';
 
+const Swap = require('../sort-algorithms/swap');
+const swapInstance = new Swap;
+const swap = swapInstance.swap;
+
 class Heap {
 
     constructor(compare, array) {
@@ -29,7 +33,7 @@ class Heap {
         this._siftUp(this.heapCore.length - 1);
     }
 
-    merge(heap) {
+    merge(heap1, heap2) {
 
     }
 
@@ -49,29 +53,24 @@ class Heap {
             length = sortedArray.length;
 
         for (let i = length - 1; i >= 0; i--) {
-            let temp = sortedArray[0];
-            sortedArray[0] = sortedArray[i];
-            sortedArray[i] = temp;
+            swap(sortedArray, i, 0);
 
             this._siftDown(0, sortedArray, i);
         }
 
-        return sortedArray;
+        return sortedArray.reverse();
     }
 
     _siftUp(index, array) {
         array = array ? array : this.heapCore;
 
         while (index > 0) {
-            let parent = this._getParent(index);
+            let parent = Heap._getParent(index);
 
             if (!parent && parent !== 0) return;
 
             if (this.compare(array[parent], array[index])) {
-                let temp = array[index];
-                array[index] = array[parent];
-                array[parent] = temp;
-
+                swap(array, index, parent);
                 index = parent;
             } else {
                 return;
@@ -86,8 +85,8 @@ class Heap {
 
         while (index < length) {
 
-            let firstChild = this._getFirst(index),
-                secondChild = this._getSecond(index),
+            let firstChild = Heap._getFirst(index),
+                secondChild = Heap._getSecond(index),
                 maxIndex = false;
 
             if (firstChild > length - 1) return false;
@@ -109,10 +108,7 @@ class Heap {
             }
 
             if (maxIndex) {
-                let temp = array[index];
-                array[index] = array[maxIndex];
-                array[maxIndex] = temp;
-
+                swap(array, index, maxIndex);
                 index = maxIndex;
             } else {
                 return false;
@@ -120,15 +116,65 @@ class Heap {
         }
     }
 
-    _getFirst(n) {
+    static siftUp(index, array, compare) {
+        while (index > 0) {
+            let parent = Heap._getParent(index);
+
+            if (!parent && parent !== 0) return;
+
+            if (!compare(array[parent], array[index])) {
+                swap(array, index, parent);
+                index = parent;
+            } else {
+                return;
+            }
+        }
+    }
+
+    static siftDown(index, array, compare, to) {
+        let length = to !== undefined ? to : array.length;
+
+        while (index < length) {
+            let firstChild = Heap._getFirst(index),
+                secondChild = Heap._getSecond(index),
+                maxIndex = false;
+
+            if (firstChild > length - 1) return false;
+
+            if (compare(array[firstChild], array[index])) {
+                maxIndex = firstChild;
+            }
+
+            if (secondChild < length) {
+                if (!maxIndex && maxIndex !== 0) {
+                    if (compare(array[secondChild], array[index])) {
+                        maxIndex = secondChild;
+                    }
+                } else {
+                    if (compare(array[secondChild], array[maxIndex])) {
+                        maxIndex = secondChild;
+                    }
+                }
+            }
+
+            if (maxIndex) {
+                swap(array, index, maxIndex);
+                index = maxIndex;
+            } else {
+                return false;
+            }
+        }
+    }
+    
+    static _getFirst(n) {
         return 2 * n + 1;
     }
 
-    _getSecond(n) {
+    static _getSecond(n) {
         return 2 * n + 2;
     }
 
-    _getParent(n) {
+    static _getParent(n) {
         let parent = Math.floor((n - 1) / 2);
 
         return parent >= 0 ? parent : false;

@@ -1,7 +1,17 @@
 'use strict';
 
-const compare = require('./compare-functions').compareNumbers;
-const compareRev = require('./compare-functions').compareNumbersRevers;
+const CompareNumbers = require('./compare-functions').CompareNumbers;
+const compareNumbers = new CompareNumbers();
+const compare = compareNumbers.compare;
+
+const CompareNumbersRevers = require('./compare-functions').CompareNumbersRevers;
+const compareNumbersRevers = new CompareNumbersRevers();
+const compareRevers = compareNumbersRevers.compare;
+
+const Swap = require('./swap');
+const swapInstance = new Swap;
+const swap = swapInstance.swap;
+
 const selectionSort = require('./selection-sort');
 
 function shellSort(array, compare) {
@@ -22,9 +32,7 @@ function shellSort(array, compare) {
 
     function recursiveCompare(i, j, gap) {
         if (compare(array[i], array[j])) {
-            let temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            swap(array, i, j);
             j = i;
             i = j - gap;
 
@@ -34,7 +42,6 @@ function shellSort(array, compare) {
         }
     }
 
-    // TODO optimize it
     function generatePratt(n) {
         let prattSequence = [];
 
@@ -53,7 +60,7 @@ function shellSort(array, compare) {
             }
         }
 
-        return selectionSort(prattSequence, compareRev);
+        return selectionSort(prattSequence, compareRevers);
     }
 }
 

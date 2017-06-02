@@ -1,6 +1,8 @@
 'use strict';
 
-const compare = require('./compare-functions').compareNumbers;
+const CompareNumbers = require('./compare-functions').CompareNumbers;
+const compareNumbers = new CompareNumbers();
+const compare = compareNumbers.compare;
 
 function mergeSort(array, compare) {
     let length = array.length;

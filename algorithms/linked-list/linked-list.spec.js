@@ -5,7 +5,7 @@ const LinkedList = algolib.LinkedList;
 
 describe('#LinkedList', function() {
 
-    describe('\n    #Data structure', function() {
+    describe('#Data structure', function() {
 
         it('should create proper data structure', function() {
             let linkedList = new LinkedList();
@@ -24,7 +24,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #push(value)', function() {
+    describe('#push(value)', function() {
 
         it('#push(value) should add element to list', function() {
             let linkedList = new LinkedList();
@@ -48,7 +48,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #pop()', function() {
+    describe('#pop()', function() {
 
         it('#pop() should return undefined if list is empty', function() {
             let linkedList = new LinkedList();
@@ -75,7 +75,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #unshift(value)', function() {
+    describe('#unshift(value)', function() {
 
         it('#unshift(value) should add element to list head in correct order', function() {
             let linkedList = new LinkedList();
@@ -96,7 +96,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #shift()', function() {
+    describe('#shift()', function() {
 
         it('#shift() should return undefined if list is empty', function() {
             let linkedList = new LinkedList();
@@ -123,7 +123,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #get(n)', function() {
+    describe('#get(n)', function() {
 
         it('#get(n) should return undefined if index - 1 > number of elements in the list', function() {
             let linkedList = new LinkedList();
@@ -153,7 +153,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #insertAfter(value, index)', function() {
+    describe('#insertAfter(value, index)', function() {
 
         it('#insertAfter(value, index) should return undefined if no element with this index', function() {
             let linkedList = new LinkedList();
@@ -187,7 +187,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #remove(index)', function() {
+    describe('#remove(index)', function() {
 
         it('#remove(index) should return undefined if no element with this index', function() {
             let linkedList = new LinkedList();
@@ -243,7 +243,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #length', function() {
+    describe('#length', function() {
 
         it('#length should be 0 if list is empty', function() {
             let linkedList = new LinkedList();
@@ -295,7 +295,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #getArray()', function() {
+    describe('#getArray()', function() {
 
         it('#getArray() should return empty Array if list is empty', function() {
             let linkedList = new LinkedList();
@@ -323,7 +323,7 @@ describe('#LinkedList', function() {
         });
     });
 
-    describe('\n    #createList(array)', function() {
+    describe('#createList(array)', function() {
 
         it('#creteList(array) should return LinkedList', function() {
             let linkedList = LinkedList.createList([]);

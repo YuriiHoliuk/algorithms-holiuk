@@ -1,5 +1,8 @@
 const isSorted = require('./is-sorted');
-const compare = require('./compare-functions').compareNumbers;
+
+const CompareNumbers = require('./compare-functions').CompareNumbers;
+const compareNumbers = new CompareNumbers();
+const compare = compareNumbers.compare;
 
 describe('#isSorted(array, compare)', function () {
 

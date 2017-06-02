@@ -1,5 +1,9 @@
 'use strict';
 
+const Swap = require('./swap');
+const swapInstance = new Swap;
+const swap = swapInstance.swap;
+
 function selectionSort(array, compare) {
     let length = array.length;
 
@@ -14,9 +18,7 @@ function selectionSort(array, compare) {
         }
 
         if (minIndex !== i) {
-            let temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
+            swap(array, i, minIndex);
         }
     }
 

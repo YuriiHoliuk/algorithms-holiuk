@@ -28,7 +28,9 @@ describe('#shuffleArray(array)', function () {
 
     it('two shuffled array should be different(sometimes can)', function () {
         let shuffledArray1 = shuffle([1, 2, 3, 4, 5, 6, 7, 8]);
+        // console.log(shuffledArray1);
         let shuffledArray2 = shuffle([1, 2, 3, 4, 5, 6, 7, 8]);
+        // console.log(shuffledArray2);
 
         shuffledArray1.should.be.not.deepEqual(shuffledArray2);
     });

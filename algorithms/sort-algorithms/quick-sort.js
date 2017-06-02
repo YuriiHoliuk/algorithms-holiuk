@@ -1,5 +1,9 @@
 'use strict';
 
+const Swap = require('./swap');
+const swapInstance = new Swap;
+const swap = swapInstance.swap;
+
 function quickSort(array, compare) {
     let length = array.length;
 
@@ -33,9 +37,7 @@ function quickSort(array, compare) {
             }
 
             if (i <= j) {
-                let temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                swap(array, i, j);
             }
         }
 

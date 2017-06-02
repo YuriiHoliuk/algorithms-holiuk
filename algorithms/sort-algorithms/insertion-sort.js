@@ -1,5 +1,9 @@
 'use strict';
 
+const Swap = require('./swap');
+const swapInstance = new Swap;
+const swap = swapInstance.swap;
+
 function insertionSort(array, compare) {
     let length = array.length;
 
@@ -7,10 +11,7 @@ function insertionSort(array, compare) {
         for (let j = i; j > 0; j--) {
 
             if (compare(array[j - 1], array[j])) {
-                let temp = array[j - 1];
-                array[j - 1] = array[j];
-                array[j] = temp;
-
+                swap(array, j  -1, j);
             } else {
                 break;
             }

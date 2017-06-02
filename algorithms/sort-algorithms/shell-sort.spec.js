@@ -2,12 +2,16 @@
 
 const algolib = require('../../index');
 const sort = algolib.shellSort;
-const compare = require('./compare-functions').compareNumbers;
+
+const CompareNumbers = require('./compare-functions').CompareNumbers;
+const compareNumbers = new CompareNumbers();
+const compare = compareNumbers.compare;
+
 const shuffle = require('./shuffle-array');
 const isSorted = require('./is-sorted');
 
 let testArray = [];
-for (let i = 0; i < 20000; i++) {
+for (let i = 0; i < 200; i++) {
     testArray.push(i);
 }
 

@@ -1,9 +1,14 @@
 let Heap = require('../../index').Heap;
-let compare = require('../sort-algorithms/compare-functions').compareNumbers;
-let compareRevers = require('../sort-algorithms/compare-functions').compareNumbersRevers;
+
+const CompareNumbers = require('../sort-algorithms/compare-functions').CompareNumbers;
+const compareNumbers = new CompareNumbers();
+const compare = compareNumbers.compare;
+
 let shuffle = require('../sort-algorithms/shuffle-array');
 
 describe('#Heap', function () {
+    this.timeout(0);
+
     describe('#Data structure', function () {
         it('should create proper data structure', function () {
             let heap = new Heap(compare);
@@ -183,7 +188,7 @@ describe('#Heap', function () {
         });
 
         it('should return heapifyed array', function () {
-            let heap = new Heap(compare, []);
+            let heap = new Heap(compare);
 
             heap.heapify([1, 0]).should.be.deepEqual([0, 1]);
 
@@ -201,7 +206,7 @@ describe('#Heap', function () {
 
     describe('#toArray', function () {
         it('should return sorted array', function () {
-            let heap = new Heap(compareRevers, shuffle([0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]));
+            let heap = new Heap(compare, shuffle([0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]));
 
             heap.toArray().should.be.deepEqual([0, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21]);
         });
