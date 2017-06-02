@@ -12,7 +12,7 @@ function quickSort(array, compare) {
     }
 
     function _quickSort(start, end) {
-        if (end - start <= 1) {
+        if (end - start < 1) {
             return;
         }
 
@@ -24,11 +24,11 @@ function quickSort(array, compare) {
 
         while (i < j) {
 
-            while (array[i] < pivot) {
+            while (compare(pivot, array[i])) {
                 i++;
             }
 
-            while (array[j] > pivot) {
+            while (compare(array[j], pivot)) {
                 j--;
             }
 
