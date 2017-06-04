@@ -1,0 +1,58 @@
+{
+    "sorts": [
+        "bubbleSort",
+        "selectionSort",
+        "insertionSort",
+        "shellSort",
+        "mergeSort",
+        "quickSort",
+        "heapSort"
+    ],
+    "timers": {
+        "shuffledTime": {
+            "bubbleSort": 2840,
+            "selectionSort": 1816,
+            "insertionSort": 1667,
+            "shellSort": 38,
+            "mergeSort": 59,
+            "quickSort": 11,
+            "heapSort": 22
+        },
+        "partialTime": {
+            "bubbleSort": 2261,
+            "selectionSort": 1667,
+            "insertionSort": 201,
+            "shellSort": 33,
+            "mergeSort": 69,
+            "quickSort": 9,
+            "heapSort": 16
+        },
+        "reverseTime": {
+            "bubbleSort": 3355,
+            "selectionSort": 1673,
+            "insertionSort": 3363,
+            "shellSort": 28,
+            "mergeSort": 59,
+            "quickSort": 8,
+            "heapSort": 18
+        },
+        "sortedTime": {
+            "bubbleSort": 1693,
+            "selectionSort": 1651,
+            "insertionSort": 0,
+            "shellSort": 27,
+            "mergeSort": 51,
+            "quickSort": 7,
+            "heapSort": 18
+        }
+    },
+    "compares": {
+        "bubbleSort": 49995000,
+        "selectionSort": 200019996,
+        "insertionSort": 174780112,
+        "shellSort": 53652050,
+        "mergeSort": 1794784,
+        "quickSort": 478816,
+        "heapSort": 903284
+    }
+}
