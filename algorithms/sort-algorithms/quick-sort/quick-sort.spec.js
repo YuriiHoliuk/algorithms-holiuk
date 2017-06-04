@@ -8,11 +8,7 @@ const shuffle = require('../../utilities/utilities').shuffleArray;
 const isSorted = require('../../utilities/utilities').isSorted;
 const getShuffledArray = require('../../utilities/utilities').getShuffledArray;
 
-// let testArray = [1, 2, 3, 3, 3, 2, 2, 1, 3, 1, 1, 3, 1 ,2 , 3, 1, 1];
-let testArray = [];
-for (let i = 0; i < 100; i++) {
-    testArray.push(i);
-}
+let testArray = getShuffledArray(20);
 
 describe('#quickSort(array, compare)', function () {
     this.timeout(0);
@@ -39,9 +35,7 @@ describe('#quickSort(array, compare)', function () {
     });
 
     it('should return sorted array', function () {
-        testArray = shuffle(testArray);
         // console.log(testArray);
-
         testArray = sort(testArray, compare);
         // console.log(testArray);
 
