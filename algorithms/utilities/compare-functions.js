@@ -3,7 +3,7 @@
 let counterDecorator = require('./utilities').counterDecorator;
 
 function compareNumbers(a, b) {
-    return a === b ? 0 : a - b > 0;
+    return a - b > 0;
 }
 
 function compareNumbersRevers(a, b) {

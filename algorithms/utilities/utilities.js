@@ -74,13 +74,33 @@ function getShuffledArray(length) {
     return array;
 }
 
+function makePartialSorted(array, k, d) {
+    let length = array.length,
+        times = length * k;
+
+    for (let i = 0; i < times; i++) {
+        let a = random(0, length - 1),
+            b = random(a - times * d, a + times * d);
+
+        if (array[b]) {
+            swap(array, a, b);
+        } else {
+            i--;
+        }
+    }
+
+    return array;
+}
+
+
 const utilities = {
     counterDecorator,
     swap,
     shuffleArray,
     isSorted,
     getShuffledArray,
-    random
+    random,
+    makePartialSorted
 };
 
 module.exports = utilities;

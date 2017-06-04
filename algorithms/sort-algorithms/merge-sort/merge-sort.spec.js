@@ -6,11 +6,9 @@ const sort = algolib.mergeSort;
 const compare =  require('../../utilities/compare-functions').compareNumbers;
 const shuffle = require('../../utilities/utilities').shuffleArray;
 const isSorted = require('../../utilities/utilities').isSorted;
+const getShuffledArray = require('../../utilities/utilities').getShuffledArray;
 
-let testArray = [];
-for (let i = 0; i < 200; i++) {
-    testArray.push(i);
-}
+let testArray = getShuffledArray(10);
 
 describe('#mergeSort(array, compare)', function() {
     this.timeout(0);
@@ -37,7 +35,6 @@ describe('#mergeSort(array, compare)', function() {
     });
 
     it('should return sorted array', function () {
-        testArray = shuffle(testArray);
         testArray = sort(testArray, compare);
 
         isSorted(testArray, compare).should.be.true();
