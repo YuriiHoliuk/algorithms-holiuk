@@ -3,6 +3,7 @@
 const Heap = require('../../../index').Heap;
 const compare =  require('../../utilities/compare-functions').compareNumbers;
 const shuffle = require('../../utilities/utilities').shuffleArray;
+const isSorted = require('../../utilities/utilities').isSorted;
 
 describe('#Heap', function () {
     this.timeout(0);
@@ -19,7 +20,7 @@ describe('#Heap', function () {
             heap.getMax.should.be.instanceOf(Function);
             heap.delMax.should.be.instanceOf(Function);
             heap.merge.should.be.instanceOf(Function);
-            heap.heapify.should.be.instanceOf(Function);
+            Heap.heapify.should.be.instanceOf(Function);
         });
     });
 
@@ -173,22 +174,22 @@ describe('#Heap', function () {
         it ('should return array', function () {
             let heap = new Heap(compare);
 
-            heap.heapify([]).should.be.instanceOf(Array);
-            heap.heapify([6, 7, 9, 1, 2]).should.be.instanceOf(Array);
+            Heap.heapify([], compare).should.be.instanceOf(Array);
+            Heap.heapify([6, 7, 9, 1, 2], compare).should.be.instanceOf(Array);
         });
 
         it('should return array with same length', function () {
             let heap = new Heap(compare);
 
-            heap.heapify([]).length.should.be.eql(0);
-            heap.heapify([0]).length.should.be.eql(1);
-            heap.heapify([6, 7, 9, 1, 2]).length.should.be.eql(5);
+            Heap.heapify([], compare).length.should.be.eql(0);
+            Heap.heapify([0], compare).length.should.be.eql(1);
+            Heap.heapify([6, 7, 9, 1, 2], compare).length.should.be.eql(5);
         });
 
         it('should return heapifyed array', function () {
             let heap = new Heap(compare);
 
-            heap.heapify([1, 0]).should.be.deepEqual([0, 1]);
+            Heap.heapify([1, 0], compare).should.be.deepEqual([0, 1]);
 
             let heapifyed = new Heap(compare, shuffle([0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]));
             let prev,
@@ -204,9 +205,9 @@ describe('#Heap', function () {
 
     describe('#toArray', function () {
         it('should return sorted array', function () {
-            let heap = new Heap(compare, shuffle([0, 5, 7, 12, 10, 15, 8, 13, 17, 11, 14, 16, 20, 21, 9]));
+            let heap = new Heap(compare, shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
-            heap.toArray().should.be.deepEqual([0, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 21]);
+            isSorted(heap.toArray(), compare).should.be.true();
         });
     })
 });

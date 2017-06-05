@@ -1,0 +1,10 @@
+<table *ngIf="data && data.timerNames">
+  <tr>
+    <th>Results/sorts</th>
+    <th *ngFor="let sortName of data.sorts">{{sortName}}</th>
+  </tr>
+  <tr *ngFor="let timerName of data.timerNames">
+    <td>{{timerName}}</td>
+    <!--<td *ngFor="let sortTimer of timer">{{sortTimer + 'ms'}}</td>-->
+  </tr>
+</table>

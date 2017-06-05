@@ -1,0 +1,58 @@
+{
+    "sorts": [
+        "bubbleSort",
+        "selectionSort",
+        "insertionSort",
+        "shellSort",
+        "mergeSort",
+        "quickSort",
+        "heapSort"
+    ],
+    "timers": {
+        "shuffledTime": {
+            "bubbleSort": 0,
+            "selectionSort": 0,
+            "insertionSort": 0,
+            "shellSort": 1,
+            "mergeSort": 1,
+            "quickSort": 0,
+            "heapSort": 0
+        },
+        "partialTime": {
+            "bubbleSort": 0,
+            "selectionSort": 1,
+            "insertionSort": 0,
+            "shellSort": 0,
+            "mergeSort": 0,
+            "quickSort": 0,
+            "heapSort": 0
+        },
+        "reverseTime": {
+            "bubbleSort": 0,
+            "selectionSort": 0,
+            "insertionSort": 0,
+            "shellSort": 0,
+            "mergeSort": 0,
+            "quickSort": 0,
+            "heapSort": 0
+        },
+        "sortedTime": {
+            "bubbleSort": 0,
+            "selectionSort": 0,
+            "insertionSort": 0,
+            "shellSort": 0,
+            "mergeSort": 0,
+            "quickSort": 0,
+            "heapSort": 0
+        }
+    },
+    "compares": {
+        "bubbleSort": 45,
+        "selectionSort": 216,
+        "insertionSort": 200,
+        "shellSort": 137,
+        "mergeSort": 156,
+        "quickSort": 147,
+        "heapSort": 280
+    }
+}

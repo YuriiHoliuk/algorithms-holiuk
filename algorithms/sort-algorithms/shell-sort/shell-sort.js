@@ -1,6 +1,5 @@
 'use strict';
 
-const compare =  require('../../utilities/compare-functions').compareNumbers;
 const compareRevers =  require('../../utilities/compare-functions').compareNumbersRevers;
 
 const swap = require('../../utilities/utilities').swap;

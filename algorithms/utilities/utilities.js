@@ -33,7 +33,7 @@ function swap(array, a, b) {
     array[a] = array[b];
     array[b] = temp;
 }
-swap = counterDecorator(swap);
+// swap = counterDecorator(swap);
 
 function shuffleArray(array) {
 

@@ -8,7 +8,7 @@ const shuffle = require('../../utilities/utilities').shuffleArray;
 const isSorted = require('../../utilities/utilities').isSorted;
 
 let testArray = [];
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 50000; i++) {
     testArray.push(i);
 }
 
@@ -38,10 +38,10 @@ describe('#heapSort(array, compare)', function() {
 
     it('should return sorted array', function () {
         testArray = shuffle(testArray);
-        // console.log(testArray);
+        // console.log(testArray, 'input');
 
         testArray = sort(testArray, compare);
-        // console.log(testArray);
+        // console.log(testArray, 'output');
 
         isSorted(testArray, compare).should.be.true();
     });

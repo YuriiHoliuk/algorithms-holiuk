@@ -10,9 +10,6 @@ function compareNumbersRevers(a, b) {
     return a - b < 0;
 }
 
-compareNumbers = counterDecorator(compareNumbers);
-compareNumbersRevers = counterDecorator(compareNumbersRevers);
-
 const compares = {
     compareNumbers,
     compareNumbersRevers

@@ -10,49 +10,49 @@
     ],
     "timers": {
         "shuffledTime": {
-            "bubbleSort": 2840,
-            "selectionSort": 1816,
-            "insertionSort": 1667,
-            "shellSort": 38,
-            "mergeSort": 59,
+            "bubbleSort": 1695,
+            "selectionSort": 1082,
+            "insertionSort": 979,
+            "shellSort": 40,
+            "mergeSort": 58,
             "quickSort": 11,
-            "heapSort": 22
-        },
-        "partialTime": {
-            "bubbleSort": 2261,
-            "selectionSort": 1667,
-            "insertionSort": 201,
-            "shellSort": 33,
-            "mergeSort": 69,
-            "quickSort": 9,
             "heapSort": 16
         },
-        "reverseTime": {
-            "bubbleSort": 3355,
-            "selectionSort": 1673,
-            "insertionSort": 3363,
-            "shellSort": 28,
-            "mergeSort": 59,
+        "partialTime": {
+            "bubbleSort": 1165,
+            "selectionSort": 1087,
+            "insertionSort": 115,
+            "shellSort": 25,
+            "mergeSort": 58,
             "quickSort": 8,
-            "heapSort": 18
+            "heapSort": 7
+        },
+        "reverseTime": {
+            "bubbleSort": 1732,
+            "selectionSort": 1028,
+            "insertionSort": 1924,
+            "shellSort": 19,
+            "mergeSort": 45,
+            "quickSort": 10,
+            "heapSort": 7
         },
         "sortedTime": {
-            "bubbleSort": 1693,
-            "selectionSort": 1651,
-            "insertionSort": 0,
-            "shellSort": 27,
-            "mergeSort": 51,
-            "quickSort": 7,
-            "heapSort": 18
+            "bubbleSort": 1064,
+            "selectionSort": 1105,
+            "insertionSort": 1,
+            "shellSort": 21,
+            "mergeSort": 52,
+            "quickSort": 13,
+            "heapSort": 10
         }
     },
     "compares": {
         "bubbleSort": 49995000,
         "selectionSort": 200019996,
-        "insertionSort": 174780112,
-        "shellSort": 53652050,
-        "mergeSort": 1794784,
-        "quickSort": 478816,
-        "heapSort": 903284
+        "insertionSort": 175023143,
+        "shellSort": 53637413,
+        "mergeSort": 1793788,
+        "quickSort": 500774,
+        "heapSort": 886019
     }
 }

@@ -1,0 +1,58 @@
+{
+    "sorts": [
+        "bubbleSort",
+        "selectionSort",
+        "insertionSort",
+        "shellSort",
+        "mergeSort",
+        "quickSort",
+        "heapSort"
+    ],
+    "timers": {
+        "shuffledTime": {
+            "bubbleSort": 1,
+            "selectionSort": 0,
+            "insertionSort": 0,
+            "shellSort": 0,
+            "mergeSort": 2,
+            "quickSort": 0,
+            "heapSort": 1
+        },
+        "partialTime": {
+            "bubbleSort": 0,
+            "selectionSort": 1,
+            "insertionSort": 0,
+            "shellSort": 1,
+            "mergeSort": 1,
+            "quickSort": 0,
+            "heapSort": 0
+        },
+        "reverseTime": {
+            "bubbleSort": 0,
+            "selectionSort": 0,
+            "insertionSort": 1,
+            "shellSort": 0,
+            "mergeSort": 0,
+            "quickSort": 0,
+            "heapSort": 0
+        },
+        "sortedTime": {
+            "bubbleSort": 1,
+            "selectionSort": 0,
+            "insertionSort": 0,
+            "shellSort": 0,
+            "mergeSort": 1,
+            "quickSort": 0,
+            "heapSort": 1
+        }
+    },
+    "compares": {
+        "bubbleSort": 4950,
+        "selectionSort": 20196,
+        "insertionSort": 17821,
+        "shellSort": 7340,
+        "mergeSort": 4859,
+        "quickSort": 2479,
+        "heapSort": 4869
+    }
+}
