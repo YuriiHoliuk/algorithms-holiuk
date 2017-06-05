@@ -1,58 +1,37 @@
-{
-    "sorts": [
-        "bubbleSort",
-        "selectionSort",
-        "insertionSort",
-        "shellSort",
-        "mergeSort",
-        "quickSort",
-        "heapSort"
-    ],
-    "timers": {
-        "shuffledTime": {
-            "bubbleSort": 1,
-            "selectionSort": 0,
-            "insertionSort": 0,
-            "shellSort": 0,
-            "mergeSort": 2,
-            "quickSort": 0,
-            "heapSort": 1
-        },
-        "partialTime": {
-            "bubbleSort": 0,
-            "selectionSort": 1,
-            "insertionSort": 0,
-            "shellSort": 1,
-            "mergeSort": 1,
-            "quickSort": 0,
-            "heapSort": 0
-        },
-        "reverseTime": {
-            "bubbleSort": 0,
-            "selectionSort": 0,
-            "insertionSort": 1,
-            "shellSort": 0,
-            "mergeSort": 0,
-            "quickSort": 0,
-            "heapSort": 0
-        },
-        "sortedTime": {
-            "bubbleSort": 1,
-            "selectionSort": 0,
-            "insertionSort": 0,
-            "shellSort": 0,
-            "mergeSort": 1,
-            "quickSort": 0,
-            "heapSort": 1
-        }
+[
+    {
+        "sort": "bubbleSort",
+        "time": 0,
+        "compares": 4950
     },
-    "compares": {
-        "bubbleSort": 4950,
-        "selectionSort": 20196,
-        "insertionSort": 17821,
-        "shellSort": 7340,
-        "mergeSort": 4859,
-        "quickSort": 2479,
-        "heapSort": 4869
+    {
+        "sort": "selectionSort",
+        "time": 1,
+        "compares": 20196
+    },
+    {
+        "sort": "insertionSort",
+        "time": 1,
+        "compares": 17880
+    },
+    {
+        "sort": "shellSort",
+        "time": 1,
+        "compares": 7253
+    },
+    {
+        "sort": "mergeSort",
+        "time": 2,
+        "compares": 4877
+    },
+    {
+        "sort": "quickSort",
+        "time": 0,
+        "compares": 2485
+    },
+    {
+        "sort": "heapSort",
+        "time": 0,
+        "compares": 4793
     }
-}
+]

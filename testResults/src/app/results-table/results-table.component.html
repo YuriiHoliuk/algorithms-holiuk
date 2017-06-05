@@ -1,10 +1,30 @@
-<table *ngIf="data && data.timerNames">
+<table *ngIf="data && data[10000]">
   <tr>
-    <th>Results/sorts</th>
-    <th *ngFor="let sortName of data.sorts">{{sortName}}</th>
+    <th rowspan="2">Sorts/results</th>
+    <th colspan="2">For 10 elements</th>
+    <th colspan="2">For 100 elements</th>
+    <th colspan="2">For 1000 elements</th>
+    <th colspan="2">For 10000 elements</th>
   </tr>
-  <tr *ngFor="let timerName of data.timerNames">
-    <td>{{timerName}}</td>
-    <!--<td *ngFor="let sortTimer of timer">{{sortTimer + 'ms'}}</td>-->
+  <tr>
+    <th>Compares</th>
+    <th>Time</th>
+    <th>Compares</th>
+    <th>Time</th>
+    <th>Compares</th>
+    <th>Time</th>
+    <th>Compares</th>
+    <th>Time</th>
+  </tr>
+  <tr *ngFor="let sort of data[10]; let i = index">
+    <td>{{data[10][i].sort}}</td>
+    <td>{{data[10][i].compares}}</td>
+    <td>{{data[10][i].time}}</td>
+    <td>{{data[100][i].compares}}</td>
+    <td>{{data[100][i].time}}</td>
+    <td>{{data[1000][i].compares}}</td>
+    <td>{{data[1000][i].time}}</td>
+    <td>{{data[10000][i].compares}}</td>
+    <td>{{data[10000][i].time}}</td>
   </tr>
 </table>

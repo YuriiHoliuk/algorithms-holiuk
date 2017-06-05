@@ -1,58 +1,37 @@
-{
-    "sorts": [
-        "bubbleSort",
-        "selectionSort",
-        "insertionSort",
-        "shellSort",
-        "mergeSort",
-        "quickSort",
-        "heapSort"
-    ],
-    "timers": {
-        "shuffledTime": {
-            "bubbleSort": 2947,
-            "selectionSort": 1782,
-            "insertionSort": 1656,
-            "shellSort": 44,
-            "mergeSort": 64,
-            "quickSort": 11,
-            "heapSort": 17
-        },
-        "partialTime": {
-            "bubbleSort": 1790,
-            "selectionSort": 1707,
-            "insertionSort": 194,
-            "shellSort": 29,
-            "mergeSort": 67,
-            "quickSort": 9,
-            "heapSort": 13
-        },
-        "reverseTime": {
-            "bubbleSort": 3193,
-            "selectionSort": 1663,
-            "insertionSort": 3313,
-            "shellSort": 29,
-            "mergeSort": 63,
-            "quickSort": 9,
-            "heapSort": 13
-        },
-        "sortedTime": {
-            "bubbleSort": 1803,
-            "selectionSort": 1664,
-            "insertionSort": 0,
-            "shellSort": 25,
-            "mergeSort": 53,
-            "quickSort": 8,
-            "heapSort": 15
-        }
+[
+    {
+        "sort": "bubbleSort",
+        "time": 2644,
+        "compares": 49995000
     },
-    "compares": {
-        "bubbleSort": 49995000,
-        "selectionSort": 200019996,
-        "insertionSort": 174981280,
-        "shellSort": 53668681,
-        "mergeSort": 1793477,
-        "quickSort": 491548,
-        "heapSort": 881036
+    {
+        "sort": "selectionSort",
+        "time": 1783,
+        "compares": 200019996
+    },
+    {
+        "sort": "insertionSort",
+        "time": 1161,
+        "compares": 174679094
+    },
+    {
+        "sort": "shellSort",
+        "time": 65,
+        "compares": 53641611
+    },
+    {
+        "sort": "mergeSort",
+        "time": 58,
+        "compares": 1793985
+    },
+    {
+        "sort": "quickSort",
+        "time": 9,
+        "compares": 476930
+    },
+    {
+        "sort": "heapSort",
+        "time": 21,
+        "compares": 907389
     }
-}
+]

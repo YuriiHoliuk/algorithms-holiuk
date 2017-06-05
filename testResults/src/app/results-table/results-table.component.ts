@@ -12,20 +12,21 @@ import 'rxjs/add/operator/map';
 export class ResultsTableComponent implements OnInit {
 
   public data: any;
+  private dataLengths: number[];
 
   constructor(private http: Http) {
-    this.data = null;
+    this.dataLengths = [10, 100, 1000, 10000];
+    this.data = {};
   }
 
   ngOnInit() {
-    this.http.get('../../data/sorts-performance1000.json')
-      .map(res => res.json())
-      .subscribe(data => {
-        this.data = data;
-        this.data.timerNames = [];
-        for (let timer in this.data.timers) {
-          this.data.timerNames.push(timer);
-        }
-      });
+    this.dataLengths.forEach(dataLength => {
+      this.http.get(`../../data/sorts-performance${dataLength}.json`)
+        .map(res => res.json())
+        .subscribe(dataSet => {
+          this.data[dataLength] = dataSet;
+          console.log(this.data);
+        });
+    });
   }
 }
