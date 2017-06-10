@@ -1,10 +1,11 @@
 'use strict';
 
 class BinaryTreeNode {
-    constructor(key) {
+    constructor(key, value) {
         this.key = key;
-        this.left = null;
-        this.right = null;
+        this.value = value ? value : null;
+        this._left = null;
+        this._right = null;
     }
 }
 
