@@ -19,10 +19,10 @@ const isSorted = require('../utilities/utilities').isSorted;
 const getShuffledArray = require('../utilities/utilities').getShuffledArray;
 const makePartialSorted = require('../utilities/utilities').makePartialSorted;
 
-let length = 100000;
+let length = 100;
 let results = [];
 
-describe.only(`#All sorts performance for ${length} elements`, function () {
+describe(`#All sorts performance for ${length} elements`, function () {
     this.timeout(0);
 
     after(function () {
