@@ -58,7 +58,7 @@ describe.only('#BinarySearchTree', function () {
             bst.find(2).value.should.be.eql(30);
         });
 
-        it('should Node with same key and value', function () {
+        it('should return Node with same key and value', function () {
             let bst = new BinarySearchTree(compare);
             bst.add(5);
             bst.add(2, 30);
@@ -69,6 +69,141 @@ describe.only('#BinarySearchTree', function () {
             bst.find(2).key.should.be.eql(2);
             bst.find(20).key.should.be.eql(20);
             bst.find(50).key.should.be.eql(50);
+        });
+    });
+
+    describe('#getMax(key)', function() {
+        it('should be a Function', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.getMax.should.be.instanceOf(Function);
+        });
+
+        it('should return null if BST is Empty', function () {
+            const bst = new BinarySearchTree(compare);
+            (bst.getMax() === null).should.be.true();
+        });
+
+        it('should return Node', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.getMax().should.be.instanceOf(BinaryTreeNode);
+        });
+
+        it('should return Node with maximal key', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.getMax().key.should.be.eql(111);
+            bst.getMax().value.should.be.eql(5);
+        })
+    });
+
+    describe('#getMin(key)', function() {
+        it('should be a Function', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.getMin.should.be.instanceOf(Function);
+        });
+
+        it('should return null if BST is Empty', function () {
+            const bst = new BinarySearchTree(compare);
+            (bst.getMin() === null).should.be.true();
+        });
+
+        it('should return Node', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.getMin().should.be.instanceOf(BinaryTreeNode);
+        });
+
+        it('should return Node with minimal key', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.getMin().key.should.be.eql(1);
+            bst.getMin().value.should.be.eql(50);
+        });
+    });
+
+    describe('#findWithParent(key)', function () {
+        it('should return null as parent if node === root', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+
+            (bst.findWithParent(20).parent === null).should.be.true();
+        });
+
+        it('should return correct node and parent', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+
+            let result = bst.findWithParent(11);
+            result.node.key.should.be.eql(11);
+            result.node.value.should.be.eql(5);
+            result.parent.key.should.be.eql(20);
+            result.parent.value.should.be.eql(3);
+        });
+    });
+
+    describe('#remove(key)', function () {
+        it('should be a Function', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.remove.should.be.instanceOf(Function);
+        });
+
+        it('should return false if no Node with this key', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.remove(15).should.be.false();
+        });
+
+        it('should correct remove leaves', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.remove(1);
+            (bst.find(1) === null).should.be.true();
+            bst.remove(111);
+            (bst.find(111) === null).should.be.true();
+        });
+
+        it('should correct remove nodes', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.remove(20);
+            (bst.find(20) === null).should.be.true();
+            bst.remove(111);
+            (bst.find(111) === null).should.be.true();
+        });
+
+        it('should return true if removed success', function () {
+            const bst = new BinarySearchTree(compare);
+            bst.add(20, 3);
+            bst.add(11, 5);
+            bst.add(1, 50);
+            bst.add(111, 5);
+            bst.remove(11).should.be.true();
+            bst.remove(111).should.be.true();
+            bst.remove(1).should.be.true();
         });
     });
 });
