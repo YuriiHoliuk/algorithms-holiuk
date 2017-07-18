@@ -51,4 +51,22 @@ describe.only('#Graph', () => {
             list[7].neighbors.indexOf(10).should.be.greaterThan(-1);
         });
     });
+
+    describe('#depthFirstSearch', () => {
+        it('should return Array', () => {
+            const graph = new Graph();
+            graph.addVertex(0, [2, 4]);
+            graph.addVertex(1, [3]);
+            graph.addVertex(2, [7]);
+            graph.addVertex(3, [6]);
+            graph.addVertex(4, [5, 7]);
+            graph.addVertex(5, [4, 7, 1]);
+            graph.addVertex(6, [2, 0, 4]);
+            graph.addVertex(7, [5, 3]);
+
+            const v = graph.depthFirstSearch();
+            console.log(v);
+            v.should.be.instanceOf(Array);
+        });
+    });
 });
