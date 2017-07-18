@@ -1,37 +1,37 @@
 [
     {
         "sort": "bubbleSort",
-        "time": 0,
+        "time": 2,
         "compares": 4950
     },
     {
         "sort": "selectionSort",
-        "time": 1,
+        "time": 0,
         "compares": 20196
     },
     {
         "sort": "insertionSort",
-        "time": 1,
-        "compares": 17880
+        "time": 0,
+        "compares": 17818
     },
     {
         "sort": "shellSort",
         "time": 1,
-        "compares": 7253
+        "compares": 7347
     },
     {
         "sort": "mergeSort",
-        "time": 2,
-        "compares": 4877
+        "time": 0,
+        "compares": 4868
     },
     {
         "sort": "quickSort",
-        "time": 0,
-        "compares": 2485
+        "time": 1,
+        "compares": 2551
     },
     {
         "sort": "heapSort",
         "time": 0,
-        "compares": 4793
+        "compares": 4769
     }
 ]

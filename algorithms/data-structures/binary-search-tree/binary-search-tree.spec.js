@@ -4,7 +4,7 @@ const BinaryTreeNode = require('./binary-tree-node');
 const BinarySearchTree = algolib.BinarySearchTree;
 const compare = algolib.compareFunctions.compareNumbers;
 
-describe.only('#BinarySearchTree', function () {
+describe('#BinarySearchTree', function () {
     it('should create proper data structure', function () {
         let bst = new BinarySearchTree(compare);
 
