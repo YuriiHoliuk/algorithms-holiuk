@@ -2,7 +2,7 @@ let Heap = require('../../index').Heap;
 let compare = require('../sort-algorithms/compare-functions').compareNumbers;
 let shuffle = require('../sort-algorithms/shuffle-array');
 
-describe.only('#Heap', function () {
+describe('#Heap', function () {
     describe('#Data structure', function () {
         it('should create proper data structure', function () {
             let heap = new Heap(compare);
