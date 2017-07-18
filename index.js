@@ -1,26 +1,27 @@
 'use strict';
 
-let bubbleSort = require('./algorithms/sort-algorithms/bubble-sort/bubble-sort');
-let coverByTile = require('./algorithms/codeforces/cover-by-tile/cover-by-tile');
-let divideWatermelon = require('./algorithms/codeforces/divide-watermelon/divide-watermelon');
-let countStones = require('./algorithms/codeforces/count-stones/count-stones');
-let shouldSayHello = require('./algorithms/codeforces/should-say-hello/should-say-hello');
-let getNextBeautifulYear = require('./algorithms/codeforces/get-next-beautiful-year/get-next-beautiful-year');
-let utilities = require('./algorithms/utilities/utilities');
-let compareFunctions = require('./algorithms/utilities/compare-functions');
-let UnionFind = require('./algorithms/union-find/union-find');
-let QuickUnion = require('./algorithms/union-find/quick-union');
-let LinkedList = require('./algorithms/data-structures/linked-list/linked-list');
-let Heap = require('./algorithms/data-structures/heap/heap');
-let selectionSort = require('./algorithms/sort-algorithms/selection-sort/selection-sort');
-let shellSort = require('./algorithms/sort-algorithms/shell-sort/shell-sort');
-let mergeSort = require('./algorithms/sort-algorithms/merge-sort/merge-sort');
-let insertionSort = require('./algorithms/sort-algorithms/insertion-sort/insertion-sort');
-let quickSort = require('./algorithms/sort-algorithms/quick-sort/quick-sort');
-let heapSort = require('./algorithms/sort-algorithms/heap-sort/heap-sort');
-let BinarySearchTree = require('./algorithms/data-structures/binary-search-tree/binary-search-tree');
+const bubbleSort = require('./algorithms/sort-algorithms/bubble-sort/bubble-sort');
+const coverByTile = require('./algorithms/codeforces/cover-by-tile/cover-by-tile');
+const divideWatermelon = require('./algorithms/codeforces/divide-watermelon/divide-watermelon');
+const countStones = require('./algorithms/codeforces/count-stones/count-stones');
+const shouldSayHello = require('./algorithms/codeforces/should-say-hello/should-say-hello');
+const getNextBeautifulYear = require('./algorithms/codeforces/get-next-beautiful-year/get-next-beautiful-year');
+const utilities = require('./algorithms/utilities/utilities');
+const compareFunctions = require('./algorithms/utilities/compare-functions');
+const UnionFind = require('./algorithms/union-find/union-find');
+const QuickUnion = require('./algorithms/union-find/quick-union');
+const LinkedList = require('./algorithms/data-structures/linked-list/linked-list');
+const Heap = require('./algorithms/data-structures/heap/heap');
+const selectionSort = require('./algorithms/sort-algorithms/selection-sort/selection-sort');
+const shellSort = require('./algorithms/sort-algorithms/shell-sort/shell-sort');
+const mergeSort = require('./algorithms/sort-algorithms/merge-sort/merge-sort');
+const insertionSort = require('./algorithms/sort-algorithms/insertion-sort/insertion-sort');
+const quickSort = require('./algorithms/sort-algorithms/quick-sort/quick-sort');
+const heapSort = require('./algorithms/sort-algorithms/heap-sort/heap-sort');
+const BinarySearchTree = require('./algorithms/data-structures/binary-search-tree/binary-search-tree');
+const Graph = require('./algorithms/data-structures/graph/graph');
 
-let algolib = {
+const algolib = {
     bubbleSort,
     coverByTile,
     divideWatermelon,
@@ -39,7 +40,8 @@ let algolib = {
     insertionSort,
     quickSort,
     heapSort,
-    BinarySearchTree
+    BinarySearchTree,
+    Graph
 };
 
 module.exports = algolib;
