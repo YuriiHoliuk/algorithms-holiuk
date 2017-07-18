@@ -1,0 +1,37 @@
+[
+    {
+        "sort": "bubbleSort",
+        "time": 23,
+        "compares": 499500
+    },
+    {
+        "sort": "selectionSort",
+        "time": 18,
+        "compares": 2001996
+    },
+    {
+        "sort": "insertionSort",
+        "time": 40,
+        "compares": 1751994
+    },
+    {
+        "sort": "shellSort",
+        "time": 16,
+        "compares": 570369
+    },
+    {
+        "sort": "mergeSort",
+        "time": 6,
+        "compares": 103562
+    },
+    {
+        "sort": "quickSort",
+        "time": 2,
+        "compares": 37047
+    },
+    {
+        "sort": "heapSort",
+        "time": 2,
+        "compares": 69524
+    }
+]
