@@ -1,6 +1,8 @@
 const Graph = require('../../../').Graph;
 const Vertex = require('./vertex');
 
+// TODO: write normal tests
+
 describe.only('#Graph', () => {
     describe('#Data structure', () => {
         it('should be a constructor', () => {
@@ -17,56 +19,113 @@ describe.only('#Graph', () => {
 
         it('should add vertex to graph', () => {
             const graph = new Graph();
-            graph.addVertex(0, [1, 5]);
-            graph.addVertex(1, [5]);
-            graph.addVertex(5, [7]);
-            graph.addVertex(7, [0, 10]);
+            graph.addVertex(0, [{id: 1, weight: 0}, {id: 5, weight: 0}]);
+            graph.addVertex(1, [{id: 5, weight: 0}]);
+            graph.addVertex(5, [{id: 7, weight: 0}]);
+            graph.addVertex(7, [{id: 0, weight: 0}, {id: 10, weight: 0}]);
             graph.addVertex(10, []);
 
-            const list = graph.getList();
+            const list = graph.vertexes();
             list[0].should.be.instanceOf(Vertex);
         });
 
-        it('graph vertexes should have correct names', () => {
+        it('graph vertexes should have correct id', () => {
             const graph = new Graph();
-            graph.addVertex(0, [1, 5]);
-            graph.addVertex(1, [5]);
-            graph.addVertex(5, [7]);
-            graph.addVertex(7, [0, 10]);
+            graph.addVertex(0, [{id: 1, weight: 0}, {id: 5, weight: 0}]);
+            graph.addVertex(1, [{id: 5, weight: 0}]);
+            graph.addVertex(5, [{id: 7, weight: 0}]);
+            graph.addVertex(7, [{id: 0, weight: 0}, {id: 10, weight: 0}]);
             graph.addVertex(10, []);
 
-            const list = graph.getList();
-            list[10].name.should.be.eql(10);
+            const list = graph.vertexes();
+            list[10].id.should.be.eql(10);
         });
 
-        it('graph vertexes should have correct neighbors', () => {
+        it('graph vertexes should have correct edges', () => {
             const graph = new Graph();
-            graph.addVertex(0, [1, 5]);
-            graph.addVertex(1, [5]);
-            graph.addVertex(5, [7]);
-            graph.addVertex(7, [0, 10]);
+            graph.addVertex(0, [{id: 1, weight: 0}, {id: 5, weight: 0}]);
+            graph.addVertex(1, [{id: 5, weight: 0}]);
+            graph.addVertex(5, [{id: 7, weight: 0}]);
+            graph.addVertex(7, [{id: 0, weight: 0}, {id: 10, weight: 0}]);
             graph.addVertex(10, []);
 
-            const list = graph.getList();
-            list[7].neighbors.indexOf(10).should.be.greaterThan(-1);
+            const list = graph.vertexes();
+            list[7].edges[0].to().should.be.eql(0);
         });
     });
 
     describe('#depthFirstSearch', () => {
         it('should return Array', () => {
             const graph = new Graph();
-            graph.addVertex(0, [2, 4]);
-            graph.addVertex(1, [3]);
-            graph.addVertex(2, [7]);
-            graph.addVertex(3, [6]);
-            graph.addVertex(4, [5, 7]);
-            graph.addVertex(5, [4, 7, 1]);
-            graph.addVertex(6, [2, 0, 4]);
-            graph.addVertex(7, [5, 3]);
+            graph.addVertex(0, [{id: 2, weight: 0}, {id: 4, weight: 0}]);
+            graph.addVertex(1, [{id: 3, weight: 0}]);
+            graph.addVertex(2, [{id: 7, weight: 0}]);
+            graph.addVertex(3, [{id: 6, weight: 0}]);
+            graph.addVertex(4, [{id: 5, weight: 0}, {id: 7, weight: 0}]);
+            graph.addVertex(5, [{id: 4, weight: 0}, {id: 7, weight: 0}, {id: 1, weight: 0}]);
+            graph.addVertex(6, [{id: 2, weight: 0}, {id: 0, weight: 0}, {id: 4, weight: 0}]);
+            graph.addVertex(7, [{id: 5, weight: 0}, {id: 3, weight: 0}]);
 
             const v = graph.depthFirstSearch();
-            console.log(v);
             v.should.be.instanceOf(Array);
+        });
+    });
+
+    describe('#sortTopological', () => {
+        it('should return Array', () => {
+            const graph = new Graph();
+            graph.addVertex(0, [{id: 2, weight: 0}, {id: 4, weight: 0}]);
+            graph.addVertex(1, [{id: 3, weight: 0}]);
+            graph.addVertex(2, [{id: 7, weight: 0}]);
+            graph.addVertex(3, [{id: 6, weight: 0}]);
+            graph.addVertex(4, [{id: 5, weight: 0}, {id: 7, weight: 0}]);
+            graph.addVertex(5, [{id: 4, weight: 0}, {id: 7, weight: 0}, {id: 1, weight: 0}]);
+            graph.addVertex(6, [{id: 2, weight: 0}, {id: 0, weight: 0}, {id: 4, weight: 0}]);
+            graph.addVertex(7, [{id: 5, weight: 0}, {id: 3, weight: 0}]);
+
+            const v = graph.sortTopological();
+            v.should.be.instanceOf(Array);
+        });
+    });
+
+    describe('#shortestPath', () => {
+        it('should return Array', () => {
+            const graph = new Graph();
+            graph.addVertex(0, [
+                {id: 1, weight: 5},
+                {id: 4, weight: 9},
+                {id: 7, weight: 8}
+            ]);
+            graph.addVertex(1, [
+                {id: 2, weight: 12},
+                {id: 3, weight: 15},
+                {id: 7, weight: 4}
+            ]);
+            graph.addVertex(2, [
+                {id: 6, weight: 4},
+                {id: 3, weight: 3}
+            ]);
+            graph.addVertex(3, [
+                {id: 6, weight: 9}
+            ]);
+            graph.addVertex(4, [
+                {id: 5, weight: 4},
+                {id: 6, weight: 20},
+                {id: 7, weight: 5}
+            ]);
+            graph.addVertex(5, [
+                {id: 2, weight: 1},
+                {id: 6, weight: 13}
+            ]);
+            graph.addVertex(6, []);
+            graph.addVertex(7, [
+                {id: 2, weight: 7},
+                {id: 5, weight: 6}
+            ]);
+
+            const v = graph.shortestPath(1);
+            // console.log(v);
+            v.should.be.instanceOf(Object);
         });
     });
 });

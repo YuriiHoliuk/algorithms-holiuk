@@ -1,9 +1,12 @@
+const Edge = require('./edge');
+
 class Vertex {
-    constructor(name, neighbors) {
-        this.name = name;
-        Array.isArray(neighbors)
-            ? this.neighbors = neighbors
-            : this.neighbors = [];
+    constructor(id, edges) {
+        this.id = id;
+        this.edges = edges.map(edge => {
+            const newEdge = new Edge(this.id, edge.id, edge.weight);
+            return newEdge;
+        });
     }
 }
 

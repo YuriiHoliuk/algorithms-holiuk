@@ -41,7 +41,7 @@ const algolib = {
     quickSort,
     heapSort,
     BinarySearchTree,
-    Graph
+    Graph,
 };
 
 module.exports = algolib;
