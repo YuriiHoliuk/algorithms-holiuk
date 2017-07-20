@@ -20,6 +20,7 @@ const quickSort = require('./algorithms/sort-algorithms/quick-sort/quick-sort');
 const heapSort = require('./algorithms/sort-algorithms/heap-sort/heap-sort');
 const BinarySearchTree = require('./algorithms/data-structures/binary-search-tree/binary-search-tree');
 const Graph = require('./algorithms/data-structures/graph/graph');
+// const justifyText = require('./algorithms/justify-text/justify-text');
 
 const algolib = {
     bubbleSort,
@@ -42,6 +43,7 @@ const algolib = {
     heapSort,
     BinarySearchTree,
     Graph,
+    // justifyText
 };
 
 module.exports = algolib;

@@ -12,26 +12,26 @@
     {
         "sort": "insertionSort",
         "time": 0,
-        "compares": 17818
+        "compares": 18131
     },
     {
         "sort": "shellSort",
-        "time": 1,
-        "compares": 7347
+        "time": 0,
+        "compares": 7297
     },
     {
         "sort": "mergeSort",
-        "time": 0,
-        "compares": 4868
+        "time": 1,
+        "compares": 4897
     },
     {
         "sort": "quickSort",
-        "time": 1,
-        "compares": 2551
+        "time": 0,
+        "compares": 2500
     },
     {
         "sort": "heapSort",
-        "time": 0,
-        "compares": 4769
+        "time": 1,
+        "compares": 5152
     }
 ]

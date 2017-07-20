@@ -3,7 +3,7 @@ const Vertex = require('./vertex');
 
 // TODO: write normal tests
 
-describe.only('#Graph', () => {
+describe('#Graph', () => {
     describe('#Data structure', () => {
         it('should be a constructor', () => {
             const graph = new Graph();
@@ -128,4 +128,16 @@ describe.only('#Graph', () => {
             v.should.be.instanceOf(Object);
         });
     });
+
+    describe('#addEdge', () => {
+        it('should return true if edge has been successfully added', () => {
+            const graph = new Graph();
+            // graph.addVertex(1, []);
+            // graph.addVertex(2, []);
+            const result = graph.addEdge(1, 2, 10);
+            // console.log(graph.edges(), result);
+
+            result.should.be.true();
+        })
+    })
 });
