@@ -8,6 +8,12 @@ class Vertex {
             return newEdge;
         });
     }
+
+    addEdge(edge) {
+        if (edge.from() !== this.id) return false;
+        this.edges.push(edge);
+        return true;
+    }
 }
 
 module.exports = Vertex;

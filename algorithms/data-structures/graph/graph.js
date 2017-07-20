@@ -1,4 +1,5 @@
 const Vertex = require('./vertex');
+const Edge = require('./edge');
 
 const core = Symbol('graph-core');
 
@@ -8,8 +9,15 @@ class Graph {
     }
 
     addVertex(id, neighbors) {
-        const vertex = new Vertex(id, neighbors);
-        this[core][id] = vertex;
+        this[core][id] = new Vertex(id, neighbors);
+    }
+
+    addEdge(from, to, weight) {
+        this[core][from] = this[core][from] || new Vertex(from, []);
+        this[core][to] = this[core][to] || new Vertex(to, []);
+
+        const edge = new Edge(from, to, weight);
+        return this[core][from].addEdge(edge);
     }
 
     vertexes() {
